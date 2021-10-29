@@ -1,0 +1,28 @@
+.footer {
+    background-color: #25262C;
+    color: white;
+  }
+  
+  .footer p {
+    font-size: 16px;
+    color: white;
+  }
+  
+  .footer h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bolder;
+  }
+  
+  .footer h6 {
+    font-size: 16px;
+    color: white;
+  }
+  
+  .down {
+    padding: 60px 0;
+  }
+  
+  .copyright {
+    text-align: center;
+  }
