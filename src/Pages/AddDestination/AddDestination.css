@@ -37,3 +37,13 @@
     font-size: 18px;
 }
 
+.error{
+    color: red;
+    font-size: 18px;
+}
+
+.add-tour{
+    background-color: #20225E;
+    color: white !important;
+    padding: 10px 0;
+}

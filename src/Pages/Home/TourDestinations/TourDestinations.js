@@ -8,7 +8,7 @@ const TourDestinations = () => {
   const [tourDestinations, setTourDestinations] = useState([]);
   useEffect(() => {
     fetch(
-      "https://raw.githubusercontent.com/Hridoy3519/travel-site-data/main/tour-destination.json"
+      "http://localhost:5000/tourDestinations"
     )
       .then((res) => res.json())
       .then((data) => setTourDestinations(data));
@@ -20,10 +20,10 @@ const TourDestinations = () => {
         <p>Hot offers for the most amazing tours around the world</p>
       </div>
 
-      <Row xs={1} md={3} className="g-4 mt-2">
+      <Row xs={1} md={3} className="g-4 my-3">
         {tourDestinations.map((destination) => (
           <DestinationCard
-            key={destination.key}
+            key={destination._key}
             destination={destination}
           ></DestinationCard>
         ))}
