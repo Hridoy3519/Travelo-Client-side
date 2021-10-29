@@ -1,14 +1,29 @@
 import React from "react";
 import { useState } from "react";
-import { Button, Card, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Alert, Button, Card, Container, Form } from "react-bootstrap";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
-
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {signInWithGoogle} = useAuth();
+  const { signInWithGoogle, error, setError, setIsLoading } = useAuth();
+
+  const location = useLocation();
+  const redirect_url = location.state?.from || "/home";
+  const history = useHistory();
+
+  const handleGoogleSignIn = () => {
+    setError("");
+    signInWithGoogle()
+      .then((result) => {
+        history.push(redirect_url);
+      })
+      .catch((error) => {
+        setError(error.message);
+      })
+      .finally(() => setIsLoading(false));
+  };
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -26,7 +41,7 @@ const Login = () => {
           <Card.Body>
             <h2 className="text-center mb-4">Log In</h2>
             <Form>
-              
+            {error && <Alert variant="danger"> {error} </Alert>}
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email Address</Form.Label>
                 <Form.Control
@@ -44,12 +59,7 @@ const Login = () => {
                   placeholder="Password"
                 />
               </Form.Group>
-              <Button
-                
-                className="w-100"
-                variant="primary"
-                type="submit"
-              >
+              <Button className="w-100" variant="primary" type="submit">
                 Log In
               </Button>
             </Form>
@@ -57,9 +67,7 @@ const Login = () => {
               Need an Account? <Link to="/signup">Sign Up</Link>
             </div>
             <div className="text-center mt-2">
-              <Button 
-              onClick={signInWithGoogle}
-              >Google Sign In</Button>
+              <Button onClick={handleGoogleSignIn}>Google Sign In</Button>
             </div>
           </Card.Body>
         </Card>
@@ -69,5 +77,3 @@ const Login = () => {
 };
 
 export default Login;
-
-// {error && <Alert variant="danger"> {error} </Alert>}

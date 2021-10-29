@@ -8,6 +8,7 @@ import Home from "./Pages/Home/Home/Home";
 import Login from "./Pages/Login/Login/Login";
 import Signup from "./Pages/Login/Signup/Signup";
 import AuthProvider from "./Context/AuthProvider";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -22,9 +23,9 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/addDestination">
+            <PrivateRoute path="/addDestination">
               <AddDestination></AddDestination>
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
             </Route>
