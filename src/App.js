@@ -5,6 +5,8 @@ import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
 import AddDestination from './Pages/AddDestination/AddDestination';
 import Home from './Pages/Home/Home/Home';
+import Login from './Pages/Login/Login/Login';
+import Signup from './Pages/Login/Signup/Signup';
 
 function App() {
   return (
@@ -20,6 +22,12 @@ function App() {
           </Route>
           <Route path="/addDestination">
             <AddDestination></AddDestination>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/signup">
+            <Signup></Signup>
           </Route>
         </Switch>
         <Footer></Footer>
