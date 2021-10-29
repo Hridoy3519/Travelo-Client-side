@@ -2,12 +2,13 @@ import React from "react";
 import { useState } from "react";
 import { Button, Card, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import useFirebase from "../../../Hooks/useFirebase";
+import useAuth from "../../../Hooks/useAuth";
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {signInWithGoogle} = useFirebase();
+  const {signInWithGoogle} = useAuth();
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -53,7 +54,7 @@ const Login = () => {
               </Button>
             </Form>
             <div className="text-center mt-2">
-              Need an Account? <Link to="/signup">Sign Upppp</Link>
+              Need an Account? <Link to="/signup">Sign Up</Link>
             </div>
             <div className="text-center mt-2">
               <Button 
