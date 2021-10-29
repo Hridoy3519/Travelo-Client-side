@@ -1,0 +1,27 @@
+.destination-card{
+    border: none;
+}
+
+.fa-calendar, .fa-users{
+    color: #4caef0;
+}
+
+h6{
+    font-size: 300;
+}
+
+.card-footer{
+    background-color: white;
+}
+
+.colored-text{
+    color: #4674E8;
+}
+
+.customized-btn{
+    background-color: #4674E8;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    border:none;
+}

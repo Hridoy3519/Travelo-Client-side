@@ -1,0 +1,39 @@
+.tour-form-container{
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    min-height: 80vh;
+}
+
+.tour-form-container .card{
+    width: 40%;
+    display: flex;
+}
+
+.tour-form-container .card-header{
+    height: 120px;
+    background-color:#20225E;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tour-form-container form input, textarea{
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 2px solid #20225E;
+    font-size: 18px;
+    color: #20225E;
+}
+
+.tour-form-container form input:focus, textarea:focus{
+    outline: none;
+}
+
+.tour-form-container form input::placeholder, textarea::placeholder{
+    color: #20225E;
+    font-size: 18px;
+}
+
