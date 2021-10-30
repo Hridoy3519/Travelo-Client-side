@@ -6,7 +6,6 @@ const BookingForm = (props) => {
   const {
     register,
     handleSubmit,
-    watch,
     reset,
     formState: { errors },
   } = useForm();
@@ -52,14 +51,17 @@ const BookingForm = (props) => {
               {...register("email", { required: true })}
             />
             <input
+              defaultValue=""
               placeholder="No of People"
               {...register("people", { required: true })}
             />
             <input
+              defaultValue=""
               placeholder="Address"
               {...register("address", { required: true })}
             />
             <input
+              defaultValue=""
               placeholder="Phone No"
               {...register("phone", { required: true })}
             />

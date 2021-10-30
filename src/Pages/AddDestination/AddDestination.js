@@ -7,7 +7,6 @@ const AddDestination = () => {
   const {
     register,
     handleSubmit,
-    watch,
     reset,
     formState: { errors },
   } = useForm();
@@ -29,8 +28,6 @@ const AddDestination = () => {
     })
   };
 
-  console.log(watch("example"));
-
   return (
     <div className="form-container">
       <Card className="rounded-3">
@@ -43,14 +40,14 @@ const AddDestination = () => {
         <br />
           <form onSubmit={handleSubmit(onSubmit)}>
             {/* register your input into the hook by invoking the "register" function */}
-            <input placeholder="Title" {...register("title", { required: true })} /> 
+            <input defaultValue="" placeholder="Title" {...register("title", { required: true })} /> 
            
             {/* include validation with required or other standard HTML validation rules */}
-            <textarea placeholder="Description" {...register("description", { required: true })} />
-            <input placeholder="No of Days" {...register("days", { required: true })} />
-            <input placeholder="Maximum People" {...register("people", { required: true })} />
-            <input placeholder="Price" {...register("price", { required: true })} />
-            <input placeholder="Img URL" {...register("img", { required: true })} />
+            <textarea defaultValue="" placeholder="Description" {...register("description", { required: true })} />
+            <input defaultValue="" placeholder="No of Days" {...register("days", { required: true })} />
+            <input defaultValue="" placeholder="Maximum People" {...register("people", { required: true })} />
+            <input defaultValue="" placeholder="Price" {...register("price", { required: true })} />
+            <input defaultValue="" placeholder="Img URL" {...register("img", { required: true })} />
             {/* errors will return when field validation fails  */}
             
 

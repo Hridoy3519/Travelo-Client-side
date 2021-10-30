@@ -13,8 +13,8 @@ const DestinationCard = (props) => {
           <Card.Title> {title}</Card.Title>
           <div className="d-flex justify-content-between">
               
-              <h6><i class="far fa-calendar"></i> {days} Days</h6>
-              <h6><i class="fas fa-users"></i> Max People: {people}</h6>
+              <h6><i className="far fa-calendar"></i> {days} Days</h6>
+              <h6><i className="fas fa-users"></i> Max People: {people}</h6>
           </div>
         </Card.Body>
         <Card.Footer className="d-flex justify-content-between">

@@ -23,7 +23,7 @@ const TourDestinations = () => {
       <Row xs={1} md={3} className="g-4 my-3">
         {tourDestinations.map((destination) => (
           <DestinationCard
-            key={destination._key}
+            key={destination._id}
             destination={destination}
           ></DestinationCard>
         ))}

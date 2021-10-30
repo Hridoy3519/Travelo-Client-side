@@ -25,7 +25,7 @@ const Header = () => {
               {
                 user.email ? ( 
                 <div className="d-flex align-items-center"> 
-                  <h5 className="colored-text me-3"><i class="far fa-user"></i> {user.displayName} </h5> 
+                  <h5 className="colored-text me-3"><i className="far fa-user"></i> {user.displayName} </h5> 
                   <button onClick={logOut} className="customized-btn">Logout</button>
                 </div> )
                 : (<Nav.Link className="customized-btn" as={Link} to='/login'>Login</Nav.Link>)

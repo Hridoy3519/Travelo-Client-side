@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { useParams } from "react-router";
 import BookingForm from "./BookingForm/BookingForm";
 import "./BookTour.css";
