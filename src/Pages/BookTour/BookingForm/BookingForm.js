@@ -11,6 +11,7 @@ const BookingForm = (props) => {
   } = useForm();
   const onSubmit = (data) => {
     data.order = props.id;
+    data.status = "pending";
     fetch("http://localhost:5000/orders", {
       method: "POST",
       headers: {
