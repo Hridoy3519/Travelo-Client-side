@@ -28,8 +28,17 @@ const ManageAllBookings = () => {
         });
     }
   };
+
+  const handleUpdate = (id) => {
+    const url = `http://localhost:5000/orders/${id}`;
+    fetch(url, {
+      method: "PUT",
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
   return (
-    <div>
+    <div className="managing-all-bookings">
       {orders.length ? (
         <Container>
           <div>
@@ -37,6 +46,7 @@ const ManageAllBookings = () => {
             <Row xs={1} md={2} className="g-4">
               {orders.map((order) => (
                 <Order
+                  handleUpdate={handleUpdate}
                   handleDelete={handleDelete}
                   key={order._id}
                   order={order}
@@ -46,7 +56,7 @@ const ManageAllBookings = () => {
           </div>
         </Container>
       ) : (
-        <div className="managing-all-bookings">
+        <div className="no-orders">
           <h1>No Orders to Manage</h1>
         </div>
       )}

@@ -3,6 +3,8 @@ import { Col } from "react-bootstrap";
 import "./Order.css";
 const Order = (props) => {
   const { order, name, people, address, phone, _id, status} = props.order;
+  // let {} = props.order;
+  const [statusOnUi, setStatusOnUi] = useState(status);
   const [destination, setDestination] = useState([]);
 
   useEffect(() => {
@@ -41,9 +43,12 @@ const Order = (props) => {
                 <i className="fas fa-users"></i> Person: {people}
               </h6>
               <h4>Total Payment: ${people * destination.price}</h4>
-              <h6>Status: {status}</h6>
-              <button className="customized-btn">Approve</button>{' '}
-              <button onClick={() => props.handleDelete(_id)} className="customized-btn">Delete</button>
+              <h6>Status: {statusOnUi}</h6>
+              <button onClick={() =>{
+                setStatusOnUi("Approved");
+                props.handleUpdate(_id)
+              }} className="customized-btn">Approve</button>{' '}
+              <button onClick={() =>  props.handleDelete(_id)} className="customized-btn">Delete</button>
             </div>
           </div>
         </div>
