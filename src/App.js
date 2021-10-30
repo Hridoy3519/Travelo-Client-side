@@ -11,6 +11,7 @@ import AuthProvider from "./Context/AuthProvider";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import BookTour from "./Pages/BookTour/BookTour";
 import ManageAllBookings from "./Pages/ManageAllBookings/ManageAllBookings";
+import MyBookings from "./Pages/MyBookings/MyBookings/MyBookings";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/manageBookings">
               <ManageAllBookings></ManageAllBookings>
+            </PrivateRoute>
+            <PrivateRoute path="/myBookings">
+              <MyBookings></MyBookings>
             </PrivateRoute>
             <Route path="/login">
               <Login></Login>

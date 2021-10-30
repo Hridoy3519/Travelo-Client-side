@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Col } from "react-bootstrap";
 import "./Order.css";
 const Order = (props) => {
-  const { order, name, people, address } = props.order;
+  const { order, name, people, address, phone } = props.order;
   const [destination, setDestination] = useState([]);
 
   useEffect(() => {
@@ -32,14 +32,18 @@ const Order = (props) => {
               </h6>
 
               <h6>
-                <i class="fas fa-map-marker-alt"></i> Address: {address}
+                <i className="fas fa-map-marker-alt"></i> Address: {address}
+              </h6>
+              <h6>
+                <i className="fas fa-mobile"></i> Phone: {phone}
               </h6>
               <h6>
                 <i className="fas fa-users"></i> Person: {people}
               </h6>
               <h4>Total Payment: ${people * destination.price}</h4>
               <h6>Status: Pending</h6>
-              <button className="customized-btn">Approve</button>
+              <button className="customized-btn">Approve</button>{' '}
+              <button className="customized-btn">Delete</button>
             </div>
           </div>
         </div>
