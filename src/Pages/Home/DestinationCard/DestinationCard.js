@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import './DestinationCard.css';
 
 const DestinationCard = (props) => {
-  const { title , img, people, days, price, key} = props.destination;
+  const { title , img, people, days, price, _id} = props.destination;
   return (
     <Col>
       <Card className="h-100 destination-card">
@@ -19,8 +19,8 @@ const DestinationCard = (props) => {
         </Card.Body>
         <Card.Footer className="d-flex justify-content-between">
             <h4 className="colored-text">${price}</h4>
-          <Link to={`service/${key}`}>
-            <button className="customized-btn">Details</button>
+          <Link to={`/bookTour/${_id}`}>
+            <button className="customized-btn">Book Now</button>
           </Link>
         </Card.Footer>
       </Card>

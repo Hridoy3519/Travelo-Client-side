@@ -1,0 +1,16 @@
+.parallax{
+    background: url("https://i.ibb.co/nrWcL3V/plane.jpg") center/cover no-repeat fixed;
+    padding: 100px 0px;
+}
+
+.parallax-inner{
+    width: 50%;
+    background-color: white;
+}
+
+@media only screen and (max-width:688px) {
+
+    .parallax-inner{
+        width: 95%;
+    }
+}

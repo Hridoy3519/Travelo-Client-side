@@ -32,13 +32,14 @@ const AddDestination = () => {
   console.log(watch("example"));
 
   return (
-    <div className="tour-form-container">
+    <div className="form-container">
       <Card className="rounded-3">
         <Card.Header>
             <h4>Add a New Tour Destination</h4>
         </Card.Header>
         <Card.Body>
-        {errors.title && errors.description && errors.days && errors.people && errors.price && errors.img ?  "" : <span className="error my-5">All Field must be full-filled</span>}
+        {errors.title && errors.description && errors.days && errors.people && errors.price && errors.img ?  "" : <span className="error my-5">*All Field must be full-filled</span>}
+        <br />
         <br />
           <form onSubmit={handleSubmit(onSubmit)}>
             {/* register your input into the hook by invoking the "register" function */}
