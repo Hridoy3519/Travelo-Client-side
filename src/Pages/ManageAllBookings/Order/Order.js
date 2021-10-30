@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Col } from "react-bootstrap";
 import "./Order.css";
 const Order = (props) => {
-  const { order, name, people, address, phone } = props.order;
+  const { order, name, people, address, phone, _id} = props.order;
   const [destination, setDestination] = useState([]);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const Order = (props) => {
               <h4>Total Payment: ${people * destination.price}</h4>
               <h6>Status: Pending</h6>
               <button className="customized-btn">Approve</button>{' '}
-              <button className="customized-btn">Delete</button>
+              <button onClick={() => props.handleDelete(_id)} className="customized-btn">Delete</button>
             </div>
           </div>
         </div>

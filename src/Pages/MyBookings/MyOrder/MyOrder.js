@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const MyOrder = (props) => {
-  const { order, name, people, address, phone } = props.order;
+  const { order, name, people, _id } = props.order;
   const [destination, setDestination] = useState([]);
 
   useEffect(() => {
@@ -9,6 +9,8 @@ const MyOrder = (props) => {
       .then((res) => res.json())
       .then((data) => setDestination(data));
   }, []);
+
+ 
 
   return (
     <div className="card destination-detail mb-3" style={{ maxWidth: "100%" }}>
@@ -29,7 +31,7 @@ const MyOrder = (props) => {
             </h6>
             <h4>Total Payment: ${people * destination.price}</h4>
             <h6>Status: Pending</h6>
-            <button className="customized-btn">Delete</button>
+            <button onClick={() => props.handleDelete(_id)} className="customized-btn">Delete</button>
           </div>
         </div>
       </div>

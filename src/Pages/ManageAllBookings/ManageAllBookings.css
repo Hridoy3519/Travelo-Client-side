@@ -1,0 +1,6 @@
+.managing-all-bookings{
+    min-height: 80vh;
+    color: red;
+    display: grid;
+    place-items: center;
+}
