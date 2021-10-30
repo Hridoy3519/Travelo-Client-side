@@ -8,7 +8,7 @@ const BookTour = () => {
   const [destination, setDestination] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/tourDestinations/${id}`)
+    fetch(`https://warm-ravine-28341.herokuapp.com/tourDestinations/${id}`)
       .then((res) => res.json())
       .then((data) => setDestination(data));
   }, []);

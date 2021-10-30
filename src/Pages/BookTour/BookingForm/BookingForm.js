@@ -12,7 +12,7 @@ const BookingForm = (props) => {
   const onSubmit = (data) => {
     data.order = props.id;
     data.status = "pending";
-    fetch("http://localhost:5000/orders", {
+    fetch("https://warm-ravine-28341.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

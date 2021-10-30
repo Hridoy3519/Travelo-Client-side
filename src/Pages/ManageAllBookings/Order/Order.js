@@ -8,7 +8,7 @@ const Order = (props) => {
   const [destination, setDestination] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/tourDestinations/${order}`)
+    fetch(`https://warm-ravine-28341.herokuapp.com/tourDestinations/${order}`)
       .then((res) => res.json())
       .then((data) => setDestination(data));
   }, []);

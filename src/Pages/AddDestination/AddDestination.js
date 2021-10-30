@@ -12,7 +12,7 @@ const AddDestination = () => {
   } = useForm();
   const onSubmit = (data) => {
 
-    fetch('http://localhost:5000/addTourDestination',{
+    fetch('https://warm-ravine-28341.herokuapp.com/addTourDestination',{
       method:"post",
       headers: {
         'content-type' : 'application/json'

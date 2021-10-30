@@ -7,7 +7,7 @@ const MyBookings = () => {
   const { user } = useAuth();
   useEffect(() => {
     if (user.email) {
-      fetch("http://localhost:5000/orders/user", {
+      fetch("https://warm-ravine-28341.herokuapp.com/orders/user", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -22,7 +22,7 @@ const MyBookings = () => {
   const handleDelete = (id) => {
     const isConfirm = window.confirm("Are You Sure?");
     if (isConfirm) {
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://warm-ravine-28341.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
