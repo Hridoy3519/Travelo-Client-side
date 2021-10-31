@@ -49,3 +49,10 @@
     color: white !important;
     padding: 10px 0;
 }
+
+@media only screen and (max-width:688px) {
+
+    .form-container .card{
+        width: 100%;
+    }
+}

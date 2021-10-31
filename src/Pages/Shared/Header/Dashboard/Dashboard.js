@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Nav, Offcanvas } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useAuth from "../../../../Hooks/useAuth";
+import './Dashboard.css';
 
 const Dashboard = () => {
   const [show, setShow] = useState(false);
@@ -12,15 +13,15 @@ const Dashboard = () => {
   const {user} = useAuth();
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch
+      <Button className="dashboard-btn" onClick={handleShow}>
+      <i class="fas fa-user-shield"></i> Dashboard
       </Button>
 
-      <Offcanvas show={show} onHide={handleClose}>
+      <Offcanvas className="offcanvas" show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Dashboard</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
+        <Offcanvas.Body className="offcanvas-body">
             <Nav>
           {user.email && (
             <Nav.Link as={Link} to="/addDestination">

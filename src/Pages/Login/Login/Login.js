@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Alert, Button, Card, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
-
+import './Login.css';
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -67,7 +67,10 @@ const Login = () => {
               Need an Account? <Link to="/signup">Sign Up</Link>
             </div>
             <div className="text-center mt-2">
-              <Button onClick={handleGoogleSignIn}>Google Sign In</Button>
+              <Button className="google-btn" onClick={handleGoogleSignIn}>
+              <img width="20px"  alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" /> 
+              Google Sign In
+              </Button>
             </div>
           </Card.Body>
         </Card>

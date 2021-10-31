@@ -76,7 +76,10 @@ const Signup = () => {
               <br />
               <br />
               <div className="text-center">
-                <Button>Google Sign In</Button>
+                <Button className="google-btn">
+                <img width="20px"  alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" /> 
+                Google Sign In
+                </Button>
               </div>
             </Form>
             <div className="text-center mt-2">

@@ -3,3 +3,8 @@
     text-transform: uppercase;
 }
 
+.navbar .navbar-brand{
+    letter-spacing: 0.5rem;
+    color: #4674E8;
+}
+

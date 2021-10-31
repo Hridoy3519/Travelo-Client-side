@@ -1,0 +1,41 @@
+.dashboard-btn{
+    background: transparent;
+    margin-left: 5px;
+}
+
+.dashboard-btn:hover{
+    background: transparent;
+    color: #4674E8;
+    transition: 0.3s all linear;
+}
+
+.offcanvas{
+    background-color: #4674E8;
+}
+
+.offcanvas-body{
+    padding: 0;
+}
+
+.offcanvas .nav-link{
+    color: white;
+    width: 100%;
+    padding-left: 16px;
+}
+.offcanvas .nav-link:hover{
+    background-color: #20225E;
+    padding-left: 20px;
+    transition: 0.5s;
+}
+
+@media only screen and (max-width:688px) {
+
+    .dashboard-btn{
+        margin-bottom: 10px;
+        margin-left: 0px;
+    }
+
+    .offcanvas{
+        width: 45%;
+    }
+}

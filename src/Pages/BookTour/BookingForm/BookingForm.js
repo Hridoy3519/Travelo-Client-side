@@ -45,10 +45,10 @@ const BookingForm = (props) => {
             <span className="error my-5">*All Field must be full-filled</span>
           )}
           <form onSubmit={handleSubmit(onSubmit)}>
-            <input defaultValue={user.displayName} {...register("name")} />
+            <input value={user.displayName || ""} {...register("name")} />
 
             <input
-              defaultValue={user.email}
+              value={user.email || ""}
               {...register("email", { required: true })}
             />
             <input

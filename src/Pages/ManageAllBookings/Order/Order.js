@@ -42,7 +42,7 @@ const Order = (props) => {
               <h6>
                 <i className="fas fa-users"></i> Person: {people}
               </h6>
-              <h4>Total Payment: ${people * destination.price}</h4>
+              <h5><small className="text-gray"> Total Payment:</small> ${people * destination.price}</h5>
               <h6>Status: {statusOnUi}</h6>
               <button onClick={() =>{
                 setStatusOnUi("Approved");

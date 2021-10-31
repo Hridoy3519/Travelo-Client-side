@@ -12,3 +12,15 @@
     background: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
+
+.carousel{
+    color: red;
+    font-size: larger;
+}
+
+@media only screen and (max-width:688px) {
+
+    .carousel img{
+        height: 65vh;
+    }
+}

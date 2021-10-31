@@ -1,15 +1,13 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Spinner } from "react-bootstrap";
 import DestinationCard from "../DestinationCard/DestinationCard";
 
 const TourDestinations = () => {
   const [tourDestinations, setTourDestinations] = useState([]);
   useEffect(() => {
-    fetch(
-      "https://warm-ravine-28341.herokuapp.com/tourDestinations"
-    )
+    fetch("https://warm-ravine-28341.herokuapp.com/tourDestinations")
       .then((res) => res.json())
       .then((data) => setTourDestinations(data));
   }, []);
@@ -20,14 +18,26 @@ const TourDestinations = () => {
         <p>Hot offers for the most amazing tours around the world</p>
       </div>
 
-      <Row xs={1} md={3} className="g-4 my-3">
-        {tourDestinations.map((destination) => (
-          <DestinationCard
-            key={destination._id}
-            destination={destination}
-          ></DestinationCard>
-        ))}
-      </Row>
+      {tourDestinations.length ? (
+        <Row xs={1} md={3} className="g-4 my-3">
+          {tourDestinations.map((destination) => (
+            <DestinationCard
+              key={destination._id}
+              destination={destination}
+            ></DestinationCard>
+          ))}
+        </Row>
+      ) : (
+        <div className="loading-animation text-center">
+          <Spinner
+            animation="border"
+            role="status"
+            style={{ width: "10rem", height: "10rem" }}
+          >
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        </div>
+      )}
     </Container>
   );
 };

@@ -57,7 +57,7 @@ const ManageAllBookings = () => {
         </Container>
       ) : (
         <div className="no-orders">
-          <h1>No Orders to Manage</h1>
+          <h1 className="mt-5">No Orders to Manage</h1>
         </div>
       )}
     </div>
