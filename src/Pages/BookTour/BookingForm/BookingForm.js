@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../../Hooks/useAuth";
 import "./BookingForm.css";
 const BookingForm = (props) => {
+  const { user } = useAuth();
   const {
     register,
     handleSubmit,
@@ -10,6 +11,8 @@ const BookingForm = (props) => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    data.name = user.displayName;
+    data.email = user.email;
     data.order = props.id;
     data.status = "pending";
     fetch("https://warm-ravine-28341.herokuapp.com/orders", {
@@ -28,7 +31,7 @@ const BookingForm = (props) => {
       });
   };
 
-  const { user } = useAuth();
+  
   return (
     <div className="parallax d-flex justify-content-center">
       <div className="parallax-inner p-5 rounded">
