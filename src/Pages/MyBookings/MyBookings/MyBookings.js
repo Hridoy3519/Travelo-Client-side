@@ -45,7 +45,8 @@ const MyBookings = () => {
       {myOrders.length ? (
         <Container>
           <div>
-            <h1 className="text-center">My Bookings</h1>
+          <h3 className="mt-3">My Bookings</h3>
+            <div className="underscore mb-5"></div>
             {myOrders.map((myOrder) => (
               <MyOrder
                 key={myOrder._id}

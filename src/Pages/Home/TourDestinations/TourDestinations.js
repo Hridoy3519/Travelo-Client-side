@@ -15,6 +15,9 @@ const TourDestinations = () => {
     <Container className="services">
       <div className="text-center mt-5">
         <h1 className="text-bold">The Best Tours</h1>
+        <div className="d-flex justify-content-center mt-3">
+        <div className="underscore"></div>
+        </div>
         <p>Hot offers for the most amazing tours around the world</p>
       </div>
 

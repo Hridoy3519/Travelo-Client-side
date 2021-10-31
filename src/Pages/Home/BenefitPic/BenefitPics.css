@@ -1,0 +1,16 @@
+.img-4{
+    margin-top: -90px;
+}
+
+@media only screen and (max-width:688px) {
+    
+.benefit-pic img{
+    width: 100%;
+    margin-top: 0;
+}
+
+.img-4{
+    margin-top: 20px;
+}
+
+}

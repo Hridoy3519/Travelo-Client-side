@@ -42,7 +42,9 @@ const ManageAllBookings = () => {
       {orders.length ? (
         <Container>
           <div>
-            <h1 className="text-center my-3">All Bookings</h1>
+            <h3 className="mt-3">All Bookings</h3>
+            <div className="underscore mb-5"></div>
+
             <Row xs={1} md={2} className="g-4">
               {orders.map((order) => (
                 <Order

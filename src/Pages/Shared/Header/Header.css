@@ -1,10 +1,10 @@
 .navbar .navbar-nav .nav-link{
     color: white;
     text-transform: uppercase;
+    margin-left: 10px;
 }
 
 .navbar .navbar-brand{
     letter-spacing: 0.5rem;
     color: #4674E8;
 }
-

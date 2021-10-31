@@ -1,0 +1,22 @@
+h1, h2{
+    color: #1D2A3B;
+}
+
+p{
+    color: #1D2A3B
+}
+
+.benefit-container p{
+    font-size: 20px;
+    line-height: 2rem;
+}
+
+.fas, .far{
+    color: #4674E8;
+}
+
+.underscore{
+    width: 100px;
+    height: 2px;
+    background-color: #1D2A3B;
+}

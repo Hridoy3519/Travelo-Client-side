@@ -18,6 +18,10 @@
     font-size: larger;
 }
 
+.carousel .carousel-caption p{
+    color: white;
+}
+
 @media only screen and (max-width:688px) {
 
     .carousel img{
