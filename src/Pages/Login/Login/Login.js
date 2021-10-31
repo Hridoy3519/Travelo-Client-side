@@ -1,12 +1,9 @@
 import React from "react";
-import { useState } from "react";
 import { Alert, Button, Card, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import './Login.css';
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const { signInWithGoogle, error, setError, setIsLoading } = useAuth();
 
   const location = useLocation();
@@ -25,12 +22,6 @@ const Login = () => {
       .finally(() => setIsLoading(false));
   };
 
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
   return (
     <Container
       className="d-flex align-items-center justify-content-center"
@@ -45,7 +36,6 @@ const Login = () => {
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email Address</Form.Label>
                 <Form.Control
-                  onBlur={handleEmail}
                   type="email"
                   placeholder="Enter Email"
                 />
@@ -54,7 +44,6 @@ const Login = () => {
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
-                  onBlur={handlePassword}
                   type="password"
                   placeholder="Password"
                 />
