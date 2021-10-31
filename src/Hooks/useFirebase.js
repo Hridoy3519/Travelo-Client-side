@@ -1,43 +1,83 @@
-import initializeFirebaseAuthentication from "../Firebase/firebase.init";
 import {
   GoogleAuthProvider,
   getAuth,
   signInWithPopup,
   onAuthStateChanged,
   signOut,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import initializeFirebaseAuthentication from "../Firebase/firebase.init";
+
+
 initializeFirebaseAuthentication();
 const useFirebase = () => {
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
+  const [signedIn, setSignedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const googleProvider = new GoogleAuthProvider();
+
   const auth = getAuth();
+  const googleProvider = new GoogleAuthProvider();
 
   const signInWithGoogle = () => {
-    setError("");
     setIsLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
 
-  //Observer
-  useEffect(() => {
-    setError("");
+  //Email and password sign up
+  const userSignUp = (email, password, confirmPassword, name) => {
     setIsLoading(true);
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user);
-      }
+    if (!name.length) {
+      setError("Name Field Must not be left empty");
+      return;
+    }
+    if (password.length < 6) {
+      setError("Password Must be at least 6 characters long!");
+      return;
+    }
+    if (password === confirmPassword) {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          updateUserInfo(name);
+          setUser(userCredential.user);
+        })
+        .catch((error) => {
+          setError(error.message);
+        })
+        .finally(() => setIsLoading(false));
+    } else {
+      setError("Password Do not Match!");
+    }
+  };
 
-      setIsLoading(false);
-    });
-  }, []);
+  const updateUserInfo = (name) => {
+    setIsLoading(true);
+    updateProfile(auth.currentUser, {
+      displayName: name,
+    })
+      .then(() => {
+        setUser(auth.currentUser);
+        setSignedIn(true);
+      })
+      .catch((error) => {
+        setError(error.message);
+      })
+      .finally(() => setIsLoading(false));
+  };
+
+  const userLogIn = (email, password) => {
+    setIsLoading(true);
+    if (password.length < 6) {
+      setError("Incorrect password");
+      return;
+    }
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
   const logOut = () => {
-    setError("");
-    setIsLoading(true);
     signOut(auth)
       .then(() => {
         setUser({});
@@ -48,14 +88,28 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
 
+  //observer
+  useEffect(() => {
+    setIsLoading(true);
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      }
+
+      setIsLoading(false);
+    });
+  }, [signedIn]);
+
   return {
     user,
-    isLoading,
     error,
+    setError,
     signInWithGoogle,
     logOut,
-    setError,
-    setIsLoading
+    userSignUp,
+    userLogIn,
+    isLoading,
+    setIsLoading,
   };
 };
 
