@@ -14,7 +14,7 @@ const Dashboard = () => {
   return (
     <>
       <Button className="dashboard-btn" onClick={handleShow}>
-        <i class="fas fa-user-shield"></i> Dashboard
+        <i className="fas fa-user-shield"></i> Dashboard
       </Button>
 
       <Offcanvas className="offcanvas" show={show} onHide={handleClose}>

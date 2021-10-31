@@ -1,0 +1,16 @@
+.success-story p{
+    color: gray;
+}
+
+.milestone h3{
+    font-size: 32px;
+}
+
+.milestone p{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.fa-globe-americas, .fa-user-check{
+    font-size: 32px;
+}

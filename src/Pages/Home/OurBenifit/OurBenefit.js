@@ -5,7 +5,7 @@ import BenefitPoints from "../BenefitPoints/BenefitPoints";
 
 const OurBenefit = () => {
   return (
-    <Container className="my-5">
+    <Container id="features" className="my-5">
       <Row xs={1} md={2} className="g-4">
          <BenefitPoints></BenefitPoints>
          <BenefitPics></BenefitPics>

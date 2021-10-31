@@ -3,7 +3,10 @@
 }
 
 .no-orders {
-  color: red;
   display: grid;
   place-items: center;
+}
+
+.no-orders h1{
+  color: red;
 }

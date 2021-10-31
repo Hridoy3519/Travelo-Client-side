@@ -26,3 +26,11 @@
   .copyright {
     text-align: center;
   }
+
+  .socials a{
+    font-size: 32px;
+    margin-right: 10px;
+  }
+  .socials a:hover{
+    color: white;
+  }

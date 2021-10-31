@@ -12,7 +12,7 @@ const TourDestinations = () => {
       .then((data) => setTourDestinations(data));
   }, []);
   return (
-    <Container className="services">
+    <Container id="tours" className="services">
       <div className="text-center mt-5">
         <h1 className="text-bold">The Best Tours</h1>
         <div className="d-flex justify-content-center mt-3">
